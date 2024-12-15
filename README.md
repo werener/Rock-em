@@ -1,6 +1,8 @@
 # Rock-em
 
 1) Скачать python 3.12.8: https://www.python.org/downloads/release/python-3128/
+При установке питона надо поставить галочку на 
+"add to environmental variables" и "Add python.exe to PATH"
 2) Скачать Docker Desktop: https://www.docker.com/products/docker-desktop/
 3) Скачать проект на компьютер
 4) Открыть cmd
