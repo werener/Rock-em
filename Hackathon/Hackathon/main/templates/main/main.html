@@ -1,0 +1,230 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="rus">
+  <head>
+    <meta property="og:site_name" content="Rock'em Sock'em">
+    <meta property="og:url" content="https://rockemsockem.ru">
+    <meta property="og:title" content="Проверка формул на антиплагиат">
+    <meta property="og:type" content="website">
+    <meta name="description" content="Наш сайт осуществляет проверку ваших формул на антиплагиат">
+    <meta name="keywords" content="Плагиат, антиплагиат, формулы, проверить формулы, проверка на антиплагиат">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="{%static 'main/css/main.css' %}">
+  </head>
+  <body>
+    <header>
+      <div id="header-middle">
+        <div id="logo-header">
+          <a id="papadududuwupa">
+            <button class="button2" type="submit" id="insert">
+              <img src="{% static 'main/img/Logo.png'%}" width="80" height="70" alt="logo" class="round">
+            </button>
+          </a>
+        </div>
+      </div>
+      <div class="h1">
+        <h1>ROCK'em SOCK'em</h1>
+      </div>
+      <div id="topmost-content"></div>
+    </header>
+
+    <div class="error" id="error-output">
+
+    </div>
+
+    <div class="copy-all">
+
+      <button class="button2" id="copy">Copy LaTeX</button>
+      <h3 class="copy-output" id="copy-output"></h3>
+    </div>
+
+    <div class="all-inputs">
+      <div class="output" id="main-output">
+
+      </div>
+
+      <input class="input" id="input" size="30" placeholder="print your formula here"/>
+      <button class="button1" type="submit" id="submit">enter</button>
+
+    </div>
+
+    <div class="all-buttons">
+
+      <div class="result" id="box-title">
+        <h2 class="h2" id="error-originality">SIMILAR FORMULAS</h2>
+        <div class="originality-result">
+          <h3 class="h3" id="originality-output"></h3>
+        </div>
+      </div>
+
+
+      <div class="functions">
+        <div class="field">
+          <div class="fieldset">
+            <button class="button" type="" onclick="elements1()">∫</button>
+          </div>
+          <div class="fieldset">
+            <button class="button" type="" onclick="elements2()">sin</button>
+          </div>
+          <div class="fieldset">
+            <button class="button" type="" onclick="greek()">α</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="elements1" id="elements1">
+
+        <div class="row1">
+          <button class="button" type="" onclick="undint()" name="row1">∫</button>
+          <button class="button" type="" onclick="defint()" name="row1"> ∫ₐ</button>
+          <button class="button" type="" onclick="lim()" name="row1">lim</button>
+
+          <button class="button" type="" onclick="derivative1()" name="row1">d/dx</button>
+          <button class="button" type="" onclick="partial1()" name="row1">∂/∂x</button>
+
+          <button class="button" type="" onclick="sqrt()" name="row1">√</button>
+          <button class="button" type="" onclick="cbrt()" name="row1">∛</button>
+          <button class="button" type="" onclick="root()" name="row1">ⁿ√</button>
+        </div>
+
+        <div class="row2">
+          <button class="button" type="" onclick="sum()" name="row2">Σ</button>
+          <button class="button" type="" onclick="product()" name="row2">Π</button>
+          <button class="button" type="" onclick="ln()" name="row2">ln</button>
+          <button class="button" type="" onclick="log()" name="row2">log</button>
+          <button class="button" type="" onclick="lg()" name="row2">lg</button>
+          <button class="button" type="" onclick="exp()" name="row2">e</button>
+
+          <button class="button" type="" onclick="derivative2()" name="row2">d²/dx</button>
+          <button class="button" type="" onclick="partial2()" name="row2">∂²/∂x</button>
+        </div>
+
+        <div class="row3">
+          <button class="button" type="" onclick="abs()" name="row3">| |</button>
+          <button class="button" type="" onclick="inf()" name="row3">∞</button>
+          <button class="button" type="" onclick="deltabig()" name="row3">Δ</button>
+
+          <button class="button" type="" onclick="empty()" name="row3">...</button>
+          <button class="button" type="" onclick="gamma_function()" name="row3">Γ()</button>
+          <button class="button" type="" onclick="beta_function()" name="row3">β()</button>
+          <button class="button" type="" onclick="unit_step()" name="row3">θ()</button>
+          <button class="button" type="" onclick="dirac_delta()" name="row3">δ()</button>
+        </div>
+        <div class="presets">
+          <button class="button1" type="" onclick="preset1()">ax² + bx + c</button>
+          <button class="button1" type="" onclick="preset2()">2*pi*k</button>
+          <button class="button1" type="" onclick="preset3()">eⁱᶿ</button>
+        </div>
+
+      </div>
+      <div class="elements2" id="elements2">
+
+        <div class="row1">
+          <button class="button" type="" onclick="sin()" name="row1">sin</button>
+          <button class="button" type="" onclick="cos()" name="row1">cos</button>
+          <button class="button" type="" onclick="tg()" name="row1">tg</button>
+          <button class="button" type="" onclick="ctg()" name="row1">ctg</button>
+          <button class="button" type="" onclick="arcsin()" name="row1">arcsin</button>
+          <button class="button" type="" onclick="arccos()" name="row1">arccos</button>
+          <button class="button" type="" onclick="arctg()" name="row1">arctg</button>
+          <button class="button" type="" onclick="arcctg()" name="row1">arcctg</button>
+        </div>
+
+        <div class="row2">
+          <button class="button" type="" onclick="sinh()" name="row2">sinh</button>
+          <button class="button" type="" onclick="cosh()" name="row2">cosh</button>
+          <button class="button" type="" onclick="tgh()" name="row2">tgh</button>
+          <button class="button" type="" onclick="ctgh()" name="row2">ctgh</button>
+          <button class="button" type="" onclick="asinh()" name="row2">asinh</button>
+          <button class="button" type="" onclick="acosh()" name="row2">acosh</button>
+          <button class="button" type="" onclick="atagh()" name="row2">atgh</button>
+          <button class="button" type="" onclick="actgh()" name="row2">actgh</button>
+        </div>
+
+        <div class="row3">
+          <button class="button" type="" onclick="degree()" name="row3">°</button>
+          <button class="button" type="" onclick="exp()" name="row3">e</button>
+          <button class="button" type="" onclick="yota()" name="row3">i</button>
+          <button class="button" type="" onclick="pi()" name="row3">π</button>
+          <button class="button" type="" onclick="theta()" name="row3">θ</button>
+          <button class="button" type="" onclick="phi()" name="row3">φ</button>
+          <button class="button" type="" onclick="omega()" name="row3">ω</button>
+          <button class="button" type="" onclick="epsilon()" name="row3">ε</button>
+        </div>
+        <div class="presets">
+          <button class="button1" type="" onclick="preset1()">ax² + bx + c</button>
+          <button class="button1" type="" onclick="preset2()">2*pi*k</button>
+          <button class="button1" type="" onclick="preset3()">eⁱᶿ</button>
+        </div>
+
+
+      </div>
+      <div class="greek" id="greek">
+
+        <div class="row1">
+          <button class="button" type="" onclick="alpha()" name="row1">α</button>
+          <button class="button" type="" onclick="beta()" name="row1">β</button>
+          <button class="button" type="" onclick="gamma()" name="row1">γ</button>
+          <button class="button" type="" onclick="delta()" name="row1">δ</button>
+          <button class="button" type="" onclick="deltabig()" name="row1">Δ</button>
+          <button class="button" type="" onclick="epsilon()" name="row1">ε</button>
+          <button class="button" type="" onclick="eta()" name="row1">η</button>
+          <button class="button" type="" onclick="phi()" name="row1">φ</button>
+        </div>
+
+        <div class="row2">
+          <button class="button" type="" onclick="theta()" name="row2">θ</button>
+          <button class="button" type="" onclick="thetabig()" name="row2">Θ</button>
+          <button class="button" type="" onclick="kappa()" name="row2">κ</button>
+          <button class="button" type="" onclick="lambda()" name="row2">λ</button>
+          <button class="button" type="" onclick="mu()" name="row2">μ</button>
+          <button class="button" type="" onclick="sigma()" name="row2">σ</button>
+          <button class="button" type="" onclick="sigmabig()" name="row2">Σ</button>
+          <button class="button" type="" onclick="ksi()" name="row2">ξ</button>
+        </div>
+
+        <div class="row3">
+          <button class="button" type="" onclick="ksibig()" name="row3">Ξ</button>
+          <button class="button" type="" onclick="pi()" name="row3">π</button>
+          <button class="button" type="" onclick="ro()" name="row3">ρ</button>
+          <button class="button" type="" onclick="tau()" name="row3">τ</button>
+          <button class="button" type="" onclick="psi()" name="row3">ψ</button>
+          <button class="button" type="" onclick="psibig()" name="row3">Ψ</button>
+          <button class="button" type="" onclick="omega()" name="row3">ω</button>
+          <button class="button" type="" onclick="omegabig()" name="row3">Ω</button>
+        </div>
+        <div class="presets">
+          <button class="button1" type="" onclick="preset1()">ax² + bx + c</button>
+          <button class="button1" type="" onclick="preset2()">2*pi*k</button>
+          <button class="button1" type="" onclick="preset3()">eⁱᶿ</button>
+        </div>
+      </div>
+
+
+
+    </div>
+    <div class="text">
+      <h1 class="h4">Введите формулу в поле для ввода или наберите её, используя кнопки. Можете воспользоваться заготовленными шаблонами. Скопировать код в форамте LaTeX можно, воспользовавшись соответствующей кнопкой в области поля вывода. Спасибо, что пользуетесь нашим продуктом!</h1>
+      <h1 class="h4">А если стало скучно - сыграйте в игру "Змейка".</h1>
+    </div>
+
+    <div class="zmeika">
+      <button class="button2">
+        <a href="zmeika/"><img src="{% static 'main/img/zmeika.png'%}" width="80" height="70" alt="logo" class="round"></a>
+      </button>
+    </div>
+
+	  <footer class="footer">
+      <div class="flex">
+        <span id="rights">Все права (не) защищены&nbsp;&copy;&nbsp;</span>
+      </div>
+    </footer>
+    <script id="MathJax-script" async src="{% static 'main/js/mathjax/es5/tex-chtml.js' %}"></script>
+    <script src="{% static 'main/js/pageLoad.js' %}"></script>
+    <script src="{% static 'main/js/kletki.js' %}"></script>
+    <script src="{% static 'main/js/insertion.js' %}"></script>
+    <script src="{% static 'main/js/slonik.js' %}"></script>
+    <script src="{% static 'main/js/nosorog.js' %}"></script>
+    <script src="{% static 'main/js/insertion.js' %}"></script>
+  </body>
+</html>

@@ -1,0 +1,12 @@
+Ссылка на файл имеет вид {% static ___ %}
+Вместо ___ ссылка на файл, будто ты уже в папке 'static'
+
+
+Lib/pytexit/core/core.py область создания новых парсинг-выражений: Ctrl+F: $
+
+УДАЛИТЬ СВОЙ VENV, ПОТОМ:
+
+py -m venv venv
+.\venv\Scripts\activate
+pip install -r requirments.txt
+py .\Hackathon\Hackathon\manage.py runserver

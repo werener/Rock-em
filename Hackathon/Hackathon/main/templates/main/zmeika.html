@@ -1,0 +1,44 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="rus">
+    <head>
+        <meta property="og:site_name" content="Rock'em Sock'em">
+        <meta property="og:url" content="https://rockemsockem.ru">
+        <meta property="og:title" content="Проверка формул на антиплагиат">
+        <meta property="og:type" content="website">
+        <meta name="description" content="Наш сайт осуществляет проверку ваших формул на антиплагиат">
+        <meta name="keywords" content="Плагиат, антиплагиат, формулы, проверить формулы, проверка на антиплагиат">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="{%static 'main/css/main.css' %}">
+    </head>
+    <body>
+        <header>
+        <div id="header-middle">
+            <div id="logo-header">
+            <a id="papadududuwupa">
+                <button class="button2" type="submit">
+                    <a href="/"><img src="{% static 'main/img/Logo.png'%}" width="80" height="70" alt="logo" class="round"></a>
+                </button>
+            </a>
+            </div>
+        </div>
+        <div class="h1">
+            <h1>ROCK'em SOCK'em</h1>
+        </div>
+        <div id="topmost-content"></div>
+        </header>
+        <div class="zmey">
+            <h1 class="h1">А вот и змейка!</h1>
+        </div>
+        <div class="game">
+            <canvas id="krftn-snake-game" data-scale="15"></canvas>
+            <p id="krftn-snake-score"></p>
+        </div>
+        <script src="{% static 'main/js/zmeika.js' %}"></script>
+        <footer>
+            <div class="flex">
+                <a href="https://github.com/kroften4" class="git"> <span id="rights">Snake made by: kroften4</span></a>
+            </div>
+        </footer>
+    </body>
+
