@@ -165,6 +165,8 @@ function preprocess(string) {
 	}
 	return processedString;
 }
+
+// database check
 const vvod = document.getElementById("input");
 const press = document.getElementById("submit");
 

@@ -8,6 +8,7 @@ from django.http import JsonResponse, HttpResponse
 from .models import Formula
 from fnmatch import fnmatch
 
+#renders
 
 def main(request):
     return render(request, 'main/main.html')
@@ -18,7 +19,9 @@ def snake(request):
 def show_all(request):
     return render(request, 'main/database.html')
 
+################################################
 
+#DB insertion through POST request
 def DBinsert(request):
     givenString = loads(request.body)["input"]
     try:
@@ -33,6 +36,7 @@ def DBinsert(request):
         return HttpResponse(status=400)
 
 
+#GET request + pytexit
 def fromPythonToLatex(request):
     givenString = request.GET.get("input")
     #print(givenString, ">>")
@@ -45,7 +49,7 @@ def fromPythonToLatex(request):
         # raise e
         return JsonResponse({"error": True})
 
-
+# GET request + DB check for matches + error output
 def buttonPressResponse(request):
     firstMatch, secondMatch, thirdMatch = (0,0,0) # biggest matches
     firstLatex, secondLatex, thirdLatex = "","",""
@@ -80,6 +84,7 @@ def buttonPressResponse(request):
         return JsonResponse({"error": True})
 
 
+# getting parameters for matching formulas
 def getParameters(func):
     count, parCount, m = 0, 0, 0
     loweredFunc = func.lower()
@@ -169,7 +174,7 @@ def getParameters(func):
     #print(counts)
     return counts
 
-
+# comparing formulas
 def compareParameters (param1, param2):
     matchRatio = 0
     # min / abs(x-y)
@@ -199,7 +204,7 @@ def compareParameters (param1, param2):
 
     return round(matchRatio * 100, 1)
 
-
+# Aho-Corasic algorithm
 class TrieNode:
     def __init__(self):
         self.children = {}
@@ -245,7 +250,6 @@ def aho_corasick(text, keywords):
             result[keyword].append(i - len(keyword) + 1)
 
     return result
-
 def strPercent(a):
     return str(a) + "\%"
 

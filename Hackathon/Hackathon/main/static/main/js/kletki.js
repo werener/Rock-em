@@ -839,7 +839,7 @@ function omegabig() {
 
 
 
-// first 3
+// change layouts
 function elements1() {
     document.getElementById("elements1").style.display = "block";
     document.getElementById("elements2").style.display = "none";
@@ -856,6 +856,7 @@ function greek() {
     document.getElementById("greek").style.display = "block";
 }
 
+// presets
 function preset1() {
     let input = document.querySelector("input");
     input.value = input.value + "ax^2 + bx + c";
@@ -880,7 +881,7 @@ function preset3() {
     placeCursor(input, 0, 0);
 }
 
-
+// copy
 function copyToClipboard(text) {
     let dummy = document.createElement("textarea");
     document.body.appendChild(dummy);
