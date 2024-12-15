@@ -6,9 +6,11 @@
 Если питон прежде не был установлен, понадобится перезагрузка компьютера
 2) Скачать Docker Desktop: https://www.docker.com/products/docker-desktop/
 3) Скачать проект на компьютер
-4) Открыть cmd
-5) Прописать cd {...}/Rock-em   где {...} - путь до папки с проектом
-6) Прописать docker-compose build
+4) Скачать git: https://git-scm.com/downloads
+5) Запустить docker desktop
+6) Открыть cmd
+7) Прописать cd {...}/Rock-em   где {...} - путь до папки с проектом
+8) Прописать docker-compose build
 
 Для запуска сервера используется команда:  docker-compose up
 Сервер доступен по адресу:  localhost:8000
